@@ -5,6 +5,7 @@ import com.exam.examspring.interfaces.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
@@ -17,16 +18,16 @@ public class QuestionController {
     public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
-    @GetMapping("/add")
-    Question add(String question, String answer) {
+    @GetMapping(value = "/add", params="answer" )
+    Question add(@RequestParam String question, @RequestParam("answer") String answer) {
         return questionService.add(question, answer);
     }
     @GetMapping("/add")
-    Question add(Question question) {
+    Question add(@RequestParam Question question) {
         return questionService.add(question);
     }
     @GetMapping("/remove")
-    Question remove(Question question) {
+    Question remove(@RequestParam Question question) {
         return questionService.remove(question);
     }
     @GetMapping("/getAll")
