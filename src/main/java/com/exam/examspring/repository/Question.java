@@ -1,4 +1,4 @@
-package com.exam.examspring;
+package com.exam.examspring.repository;
 
 import java.util.Objects;
 

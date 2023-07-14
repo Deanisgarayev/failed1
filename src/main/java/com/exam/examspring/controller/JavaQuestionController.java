@@ -1,6 +1,6 @@
 package com.exam.examspring.controller;
 
-import com.exam.examspring.Question;
+import com.exam.examspring.repository.Question;
 import com.exam.examspring.interfaces.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,10 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/exam/java")
-public class QuestionController {
+public class JavaQuestionController {
     QuestionService questionService;
 @Autowired
-    public QuestionController(QuestionService questionService) {
+    public JavaQuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
     @GetMapping(value = "/add", params="answer" )
