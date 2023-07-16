@@ -16,19 +16,19 @@ public class ExaminerServiceImplTest {
     @InjectMocks
     ExaminerServiceImplTest out;
 
-//    @BeforeEach
-//    public void setUp() {
-//        Mockito.when(javaQuestionService.getAll()).thenReturn(questionList());
+    @BeforeEach
+    public void setUp() {
+        Mockito.when(javaQuestionService.getAll()).thenReturn(questionList());
     }
 
-//    private List<Question> questionList() {
-//        return new ArrayList<>(list.of( new Question("first", "first"),
-//                new Question("second","second"),
-//                new Question("third", "third"),
-//                new Question("forth", "forth"),
-//                new Question("fifth", "fifth"),
-//                new Question("sixth", "sixth"),
-//                new Question("seventh", "seventh")
-//        ));
-//    }
-//}
+    private List<Question> questionList() {
+        return new ArrayList<>(list.of( new Question("first", "first"),
+                new Question("second","second"),
+                new Question("third", "third"),
+                new Question("forth", "forth"),
+                new Question("fifth", "fifth"),
+                new Question("sixth", "sixth"),
+                new Question("seventh", "seventh")
+        ));
+    }
+}

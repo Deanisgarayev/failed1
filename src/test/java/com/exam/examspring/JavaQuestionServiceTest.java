@@ -33,4 +33,15 @@ public class JavaQuestionServiceTest {
         assertThrows(ItAlreadyExistsException.class,
                 () -> out.add("firstQuestion", "firstAnswer"));
     }
+
+    @Test
+    public void getAllTest() {
+        List<Question> result = new ArrayList<>(List.of(
+                out.add("first", "first"),
+                out.add("second", "second"),
+                out.add("third", "third")
+        ));
+        List<Question> getAll = new ArrayList<>(out.getAll());
+        Assertions.assertIterableEquals(result, getAll);
+    }
 }
