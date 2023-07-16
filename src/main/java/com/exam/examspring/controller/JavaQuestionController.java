@@ -18,8 +18,8 @@ public class JavaQuestionController {
     public JavaQuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
-    @GetMapping(value = "/add", params="answer" )
-    Question add(@RequestParam String question, @RequestParam("answer") String answer) {
+    @GetMapping(value = "/add", params= "answer" )
+    Question add(@RequestParam("question") String question, @RequestParam("answer") String answer) {
         return questionService.add(question, answer);
     }
     @GetMapping("/add")

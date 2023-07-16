@@ -7,6 +7,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExaminerServiceImplTest {
@@ -15,20 +16,19 @@ public class ExaminerServiceImplTest {
     @InjectMocks
     ExaminerServiceImplTest out;
 
-    @BeforeEach
-    public void setUp() {
+//    @BeforeEach
+//    public void setUp() {
 //        Mockito.when(javaQuestionService.getAll()).thenReturn(questionList());
     }
 
 //    private List<Question> questionList() {
-//        return list.of(
-//                new Question("first", "first"),
+//        return new ArrayList<>(list.of( new Question("first", "first"),
 //                new Question("second","second"),
 //                new Question("third", "third"),
 //                new Question("forth", "forth"),
 //                new Question("fifth", "fifth"),
 //                new Question("sixth", "sixth"),
 //                new Question("seventh", "seventh")
-//        );
+//        ));
 //    }
-}
+//}

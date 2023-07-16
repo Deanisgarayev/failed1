@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/Exam")
 public class ExamController {
     private final ExaminerService examinerService;
 @Autowired
