@@ -11,7 +11,7 @@ import java.util.*;
 @Service
 public class JavaQuestionService implements QuestionService {
 
-    public List<Question> questList = new ArrayList<>();
+    public Set<Question> questSet = new HashSet<>();
     private final Random random;
 
     public JavaQuestionService( Random random) {
@@ -24,26 +24,26 @@ public class JavaQuestionService implements QuestionService {
     @Override
     public Question add(String question, String answer) {
         Question quest = new Question(question, answer);
-        if (questList.contains(quest)) {
+        if (questSet.contains(quest)) {
             throw new ItAlreadyExistsException("You can't add it again");
         }
-        questList.add(quest);
+        questSet.add(quest);
         return quest;
     }
 
     @Override
     public Question add(Question question) {
-        if (questList.contains(question)) {
+        if (questSet.contains(question)) {
             throw new ItAlreadyExistsException("You can't add it again");
         }
-        questList.add(question);
+        questSet.add(question);
         return question;
     }
 
     @Override
     public Question remove(Question question) {
-        if (questList.contains(question)) {
-             questList.remove(question);
+        if (questSet.contains(question)) {
+             questSet.remove(question);
             return question;
         }
         throw new ItIsAbsentException("You can't remove that isn't there");
@@ -51,11 +51,12 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Collection<Question> getAll() {
-        return Collections.unmodifiableCollection(questList);
+        return Collections.unmodifiableCollection(questSet);
     }
 
     @Override
     public Question getRandomQuestion() {
-        return questList.get(getRandomInt());
+        return null;
+
+        }
     }
-}
