@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
+
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
     private final QuestionService questionService;
@@ -17,7 +19,13 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     @Override
     public Collection<Question> getQuestions(int amount) {
-        return questionService.getAll();
+//        questionService.getAll().stream().collect(Collectors.toMap(e -> amount, e -> e.toString()));
+//        amount = 5;
+//        for (int i = 0; i < amount; i++) {
+//
+//        }
+
+
 //        Его задача: создать коллекцию и заполнить её с помощью вызова getRandomQuestion у QuestionService случайными вопросами.
 //
 //                Учтите:

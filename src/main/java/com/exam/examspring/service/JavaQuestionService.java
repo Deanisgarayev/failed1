@@ -12,15 +12,12 @@ import java.util.*;
 public class JavaQuestionService implements QuestionService {
 
     public Set<Question> questSet = new HashSet<>();
-    private final Random random;
+//    private final Random random;
 
-    public JavaQuestionService( Random random) {
-        this.random = random;
-    }
+//    public JavaQuestionService( Random random) {
+//        this.random = random;
+//    }
 
-    public int getRandomInt() {
-        return random.nextInt();
-    }
     @Override
     public Question add(String question, String answer) {
         Question quest = new Question(question, answer);
@@ -50,13 +47,23 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
+    public Question remove(String question, String answer) {
+        Question quest = new Question(question, answer);
+        if (questSet.contains(quest)) {
+            questSet.remove(quest);
+            return quest;
+        }
+        throw new ItIsAbsentException("You can't remove that isn't there");
+    }
+
+    @Override
     public Collection<Question> getAll() {
         return Collections.unmodifiableCollection(questSet);
     }
 
     @Override
     public Question getRandomQuestion() {
-        return null;
+        return (Question) Collections.singleton(questSet);
 
         }
     }
