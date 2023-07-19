@@ -8,7 +8,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ExaminerServiceImplTest {
     @Mock
@@ -18,11 +20,11 @@ public class ExaminerServiceImplTest {
 
     @BeforeEach
     public void setUp() {
-        Mockito.when(javaQuestionService.getAll()).thenReturn(questionList());
+        Mockito.when(javaQuestionService.getAll()).thenReturn(questSet());
     }
 
-    private List<Question> questionList() {
-        return new ArrayList<>(list.of( new Question("first", "first"),
+    private Set<Question> questSet() {
+        return new HashSet<>(Set.of( new Question("first", "first"),
                 new Question("second","second"),
                 new Question("third", "third"),
                 new Question("forth", "forth"),
